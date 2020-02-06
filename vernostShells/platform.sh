@@ -1,4 +1,5 @@
 #!/bin/sh
+clear
 gnome-terminal --tab --active 
 code ubweb
 sleep 30
