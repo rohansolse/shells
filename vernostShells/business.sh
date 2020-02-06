@@ -2,4 +2,5 @@
 clear
 gnome-terminal --tab --active
 cd ubweb/Connector/Airlines-buisness/
-sudo nodemon UBBusiness.js
+sudo nodemon --inspect UBBusiness.js
+# sudo nodemon UBBusiness.js
