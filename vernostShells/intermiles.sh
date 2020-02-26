@@ -1,7 +1,7 @@
 # Please keep this file outside of root directory.
 
 # Tab for workspace
-gnome-terminal --tab --active
+gnome-terminal --tab --active -- bash -c "cd ubweb; exec bash"
 # open new tab and run UBBusiness.js with nodemon
 gnome-terminal --tab -- bash -c "cd ubweb/Connector/Airlines-buisness; sudo nodemon UBBusiness.js; exec bash"
 # open new tab and run UBConnector.js with nodemon
@@ -11,5 +11,4 @@ gnome-terminal --tab -- bash -c "cd ubweb/Connector/Airlines-DAO; sudo nodemon d
 # open vscode with our project then frontend on browser and run redis
 gnome-terminal --tab -- bash -c "code ubweb; xdg-open http://localhost:8080/; redis-server; exec bash"
 # this will start frontend
-cd ubweb
-sudo npm start
+gnome-terminal --tab -- bash -c "cd ubweb; sudo npm start; exec bash"
