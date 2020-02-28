@@ -65,7 +65,7 @@ then
         echo "\e[36m ***** Creating Build without node_modules. ***** \e[0m"
         zip -r ubdist.zip dist
     fi
-    if [ -d ubdist.zop ]
+    if [ -f ubdist.zip ]
     then
         cp ubdist.zip ../builds
     fi
