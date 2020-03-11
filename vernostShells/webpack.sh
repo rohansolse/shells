@@ -15,10 +15,11 @@ then
     cd build
     if [ -f businessapp.js ]
     then
-        cp businessapp.js ../../../../builds
+        echo "\e[36m ***** Build is moved to \e[1;32m\"/home/rohan/jp/builds\"\e[0m\e[36m ***** \e[0m"
+        mv businessapp.js ../../../../builds
     fi
     cd ../../../../
-    echo "\e[36m ***** Build for business is created. ***** \e[0m"
+    echo "\e[36m ***** Build for business is Ready. ***** \e[0m"
 fi
 #Create Connector build
 if [ $toBuild = "connector" ] || [ $toBuild = "all" ]
@@ -29,10 +30,11 @@ then
     cd build
     if [ -f connectorapp.js ]
     then
-        cp connectorapp.js ../../../../builds
+        echo "\e[36m ***** Build is moved to \e[1;32m\"/home/rohan/jp/builds\"\e[0m\e[36m ***** \e[0m"
+        mv connectorapp.js ../../../../builds
     fi
     cd ../../../../
-    echo "\e[36m ***** Build for connector is created. ***** \e[0m"
+    echo "\e[36m ***** Build for connector is Ready. ***** \e[0m"
 fi
 #Create Dao Build
 if [ $toBuild = "dao" ] || [ $toBuild = "all" ]
@@ -43,10 +45,11 @@ then
     cd build
     if [ -f daoapp.js ]
     then
-        cp daoapp.js ../../../../builds
+        echo "\e[36m ***** Build is moved to \e[1;32m\"/home/rohan/jp/builds\"\e[0m\e[36m ***** \e[0m"
+        mv daoapp.js ../../../../builds
     fi
     cd ../../../../
-    echo "\e[36m ***** Build for dao is created. ***** \e[0m"
+    echo "\e[36m ***** Build for dao is Ready. ***** \e[0m"
 fi
 #Create Frontend Build
 if [ $toBuild = "frontend" ] || [ $toBuild = "all" ]
@@ -67,8 +70,9 @@ then
     fi
     if [ -f ubdist.zip ]
     then
-        cp ubdist.zip ../builds
+        echo "\e[36m ***** Build is moved to \e[1;32m\"/home/rohan/jp/builds\"\e[0m\e[36m ***** \e[0m"
+        mv ubdist.zip ../builds
     fi
     cd ..
-    echo "\e[36m ***** Build for Frontend is created. ***** \e[0m"
+    echo "\e[36m ***** Build for Frontend is Ready. ***** \e[0m"
 fi
