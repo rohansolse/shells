@@ -1,3 +1,9 @@
+echo "We should pull branch before creating webpack"
+cd ubweb
+branch=`git rev-parse --abbrev-ref HEAD`
+echo "\e[36m ***** Executing :\e[0m \e[32m git push origin $branch \e[0m"
+git push origin $branch
+cd ..
 echo "\e[36m ***** Please let me know which build you want [ business | dao | connector | frontend | all ] :\e[0m \c"
 read toBuild
 echo "\e[36m ***** You Selected :\e[0m $toBuild"
