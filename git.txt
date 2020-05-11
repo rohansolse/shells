@@ -1,0 +1,192 @@
+------------------------------------------- Adding an existing project to GitHub 
+$ git init
+$ git add .
+$ git commit -m 'First commit'
+$ git remote add origin <remote repository URL>
+$ git remote -v
+$ git push origin master
+------------------------------------------- GIT install on windows
+* install git on windows
+* download git from the official site
+“Use git from the windows command prompt”
+“Checkout as-is commit Unix-style line ending”
+“use Mintty” 
+Next->finish
+------------------------------------------- git version and update
+$ git version
+$ git --version
+$ git update-git-for-windows
+------------------------------------------- working directory
+$ pwd
+$ mkdir <folder name>
+$ cd <folder name>
+$ ls 
+$ cd .. 
+$ echo “My name is Rohan” >> name.txt
+$ cat name.txt 
+$ unzip <path>
+$ mv <source> <destination>
+$ ls -al
+$ rm <file name>
+$ rm -rf <folder name>
+-------------------------------------------basic commands 
+$ git status
+$ git init
+$ git init .
+$ git add <file/folder name>
+$ git add .
+$ git commit -m 'msg'
+$ git commit --amend -m 'msg' // rename last commit
+$ git commit --amend --no-edit //add new changes in last commit
+$ git push origin master
+$ git push origin <branch name>
+$ which git
+$ git log   //for commit ids
+$ git show   //last commit and dev containing all changes
+$ git log
+$ git log --oneline
+$ git log --oneline --graph --decorate --all
+$ git mv <source> <destination>   //rename file
+$ git rm <file name>
+$ git ls-files
+------------------------------------------- express commits
+$ git commit -am “update files”
+------------------------------------------- alias
+$ git config --global alias.hist “log --oneline --graph --decorate --all”
+$ git hist
+$ git hist -- <file/folder name>
+------------------------------------------- issue in git on Mac 
+$ sudo xcode-select --install
+------------------------------------------- config your username
+$ git config --global user.name “your git username” //all the project
+$ git config --system user.name “your git username” //all the user
+$ git config --local user.name “your git username” //specific for repo
+$ git config --global user.email “your git email”
+$ git config --global --list
+-------------------------------------------to store your git credentials
+$ git config --global credential.helper "cache --timeout 7200"
+$ then push branch
+$ put your username and password for the last time
+-------------------------------------------to remove saved git credentials
+$ git config credential.helper ""
+Open Control Panel from the Start menu
+Select User Accounts
+Select "Manage your credentials" in the left-hand menu
+Delete any credentials related to Git or GitHub
+ ------------------------------------------- clone GIT repo
+$ git clone <https clone url>
+$ git clone <url> -b <branch-name>
+-------------------------------------------to remove directory
+$ rm -rf <dir name>
+-------------------------------------------to remove recent changes
+$ git reset HEAD <file name> //revert from stage to working dir
+$ git checkout -- <file name> //remove from working dir 
+$ git checkout .
+$ git clean -xdf // remove x- git ignore files d- remove untracked directories
+$ git revert --abort
+-------------------------------------------to know the local changes
+$ git diff <commit id latest> <commit id previous>
+$ git diff <latest branch name> <old branch name>
+$ git difftool <commit id latest> <commit id previous>
+$ git diff
+$ git difftool
+------------------------------------------- types of merging
+Fast forward
+Automatic
+Manual
+ 
+$ git merge <branch name>    //merge given branch to the current branch
+$ git mergetool    // to check merge conflicts
+------------------------------------------- branches
+$ git branch   // to know the name of current branch
+$ git branch -a    // to know all the branches
+$ git checkout -b <branch name>    // create new branch and switch to it
+$ git checkout <branch name>
+$ git branch -d <branch name>    // delete branch locally
+$ git branch -D <branch name>    // delete branch forcefully locally
+$ git push origin :<branch name> //delete branch remotely.
+------------------------------------------- tags
+$ git tag <tag name>
+$ git tag -d <tag name>
+$ git tag --list
+$ git tag --push //push tags from local
+$ git tag -f <tagname> <commit id> //update old tag
+$ git push --force origin <tagname>
+------------------------------------------- to save temp changes locally
+$ git stash
+$ git stash save "msg"
+$ git stash list
+$ git stash pop
+$ git stash apply //keep a copy in stash also
+$ git stash drop // remove single entry
+$ git stash clear // clear the stash
+------------------------------------------- rest
+$ git reset <commit id> --soft
+$ git reset <commit id> --mixed
+$ git reset <commit id> --hard
+$ git reflog
+$ git reset --soft HEAD~1
+$ git reset --hard HEAD~1
+$ git reset --soft <commit id>
+$ git reset --hard <commit id>
+------------------------------------------- ssh authentication
+$ ssh-keygen -t rsa -C “<email address>”
+------------------------------------------- repository
+$ git clone <url> <folder in which you want to clone repository>
+------------------------------------------- copy files to current repo
+$ cp -R ~<path> .
+$ git remote add origin <url>
+------------------------------------------- to print simple logs on push
+$ git push    //to show git commands
+$ git config --global push.default simple
+pull = fetch + merge
+------------------------------------find git URL 
+$ git remote show origin
+$ git remote add origin url
+$ git remote remove origin url
+$ git remote set-url origin <new url/renamed repo url>
+$ git push --set--upstream origin feature
+$ git push --set--upstream origin master
+$ git log // to check all the commits
+$ git log --pretty=oneline
+$ git merge <branch name> //you have to be at the destination branch,
+				then you can use this command
+-------------------------------------------version control tools
+git - distributed control system - open source
+subversion - centralized control system - 
+CVS - centralize control system - 
+mercurial - distributed control system - 
+--------------------------------------------------
+git update-git-for-windows
+------------------------------------------------ Git Flow
+ 
+Git Flow concept is working by splitting branches for each purpose.
+Master branch — This branch contain production of code base
+Develop branch — This branch is develop branch.
+Feature branch — This branch split from develop branch. In case we need new features we must split it from the develop branch. when this feature is done. we need to combine back to develop
+Release branch — This branch for release. checking everything before release. include a written document about this release.
+Hotfix branch — This branch to fix urgent bugs in production.
+ 
+Link: https://danielkummer.github.io/git-flow-cheatsheet/
+ 
+$ apt-get install git-flow  // ubuntu
+$ wget -q -O - --no-check-certificate https://raw.github.com/petervanderdoes/gitflow-avh/develop/contrib/gitflow-installer.sh install stable | bash
+ 
+$ git flow init
+$ git flow feature start MYFEATURE
+$ git flow feature finish MYFEATURE
+$ git flow feature publish MYFEATURE
+$ git flow feature pull origin MYFEATURE
+$ git flow feature track MYFEATURE
+ 
+$ git flow release start RELEASE [BASE]
+$ git flow release publish RELEASE
+$ git flow release track RELEASE
+$ git flow release finish RELEASE
+$ git push origin --tags
+ 
+$ git flow hotfix start VERSION [BASENAME]
+$ git flow hotfix finish VERSION
+$ git flow hotfix delete cross_sell_fix -f
+
+
