@@ -1,6 +1,9 @@
-git pull origin master
+branch=`git rev-parse --abbrev-ref HEAD`
+echo "Your working branch is : $branch"
+git status
 git add .
 echo "Enter your commit: "
-read $commit
-git commit -m "$commit"
-git push origin master
+read msg
+git commit -m "$msg"
+git pull origin $branch
+git push origin $branch
